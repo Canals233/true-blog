@@ -6,7 +6,7 @@ const headItems = [
 		activeImgSrc: require("../../assets/blog-imgs/home-red.png"),
 	},
 	{
-		text: "关于我的",
+		text: "个人简介",
 		imgsrc: require("../../assets/blog-imgs/about.png"),
 		activeImgSrc: require("../../assets/blog-imgs/about-red.png"),
 	},
@@ -29,8 +29,8 @@ const headItems = [
 
 const Header = () => {
 	return (
-		<section id="header">
-			<div className=" w-full p-8 flex  justify-between border-b border-red-400 flex-col md:flex-row ">
+		<section id="header" className="z-10">
+			<div className=" w-full p-8 flex  justify-between border-b border-red-500 flex-col md:flex-row ">
 				<div className="flex">
 					<div className=" rounded-lg  h-20 ">
 						<svg
@@ -39,7 +39,7 @@ const Header = () => {
 							viewBox="0 0 24 24"
 							strokeWidth="1.5"
 							stroke="currentColor"
-							className="w-16 h-20 text-red-400"
+							className="w-16 h-20 text-red-500"
 						>
 							<path
 								strokeLinecap="round"
@@ -48,7 +48,7 @@ const Header = () => {
 							/>
 						</svg>
 					</div>
-					<p className="font-bold text-4xl align-middle pl-4 pt-5 tracking-wider whitespace-nowrap hover:text-red-400">
+					<p className="font-bold text-4xl align-middle pl-4 pt-5 tracking-wider whitespace-nowrap hover:text-red-500">
 						前往博客
 					</p>
 				</div>

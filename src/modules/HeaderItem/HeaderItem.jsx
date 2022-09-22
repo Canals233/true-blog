@@ -11,7 +11,7 @@ const HeaderItem = (params) => {
 	};
 	return (
 		<div
-			className={`h-20 pt-4  flex-col flex items-center ${hoverState?'text-red-400':''} `}
+			className={`h-20 pt-4  flex-col flex items-center ${hoverState?'text-red-500':''} `}
 			onMouseOver={overHandler}
 			onMouseOut={outHandler}
 		>
