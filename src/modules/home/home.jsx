@@ -6,7 +6,7 @@ const Home = () => {
 			<div className="z-10">
 				<img
                     id='home-avator'
-					class="w-32 h-32 rounded-full mx-auto hover:scale-105 duration-200 "
+					className="w-32 h-32 rounded-full mx-auto hover:scale-105 duration-200 "
 					src={require("../../assets/avator.jpg")}
 					alt=""
 					width="384"
