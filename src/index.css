@@ -5,5 +5,9 @@
 body{
     margin: 0;
     padding: 0;
-    
+   
 }
+html{
+    scroll-behavior: smooth;
+}
+/* 在html上加才有用 */

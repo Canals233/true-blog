@@ -15,7 +15,8 @@ const projects = [
 <br />
 技术栈：WXML,WXSS,JS，微信小程序API，微信云数据库`,
 		style: "grey",
-        imgsrc:require("../../assets/project/know2eat-show.gif")
+        imgsrc:require("../../assets/project/know2eat-show.gif"),
+        href: require("../../assets/know2eat.png")
 	},
 	{
 		title: `皇冠服装`,
@@ -25,7 +26,8 @@ const projects = [
         <br/>技术栈：React ,Redux, React Saga ,React Thunk , Firebase 数据库
         `,
 		style: "red",
-        imgsrc:require("../../assets/project/crwn.gif")
+        imgsrc:require("../../assets/project/crwn.gif"),
+        href:'https://canals-clothing.netlify.app/'
 	},
 ];
 
@@ -45,6 +47,7 @@ const Project = () => {
 							text={project.text}
 							style={project.style}
                             imgsrc={project.imgsrc}
+                            href={project.href}
 						/>
 					);
 				})}

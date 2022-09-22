@@ -1,4 +1,4 @@
-const ProjectItem=({title,text,style,imgsrc})=>{
+const ProjectItem=({title,text,style,imgsrc,href})=>{
     return (
         <div
 					className="flex w-full py-10 flex-col sm:flex-row "
@@ -25,7 +25,11 @@ const ProjectItem=({title,text,style,imgsrc})=>{
 							}}
 							className="text-xl text-left leading-9 "
 						></p>
+                        <a href={href} className={`text-4xl duration-200 inline-block hover:text-amber-400 hover:scale-120 min-w-max rounded-lg border  bg-slate-200 shadow-xl` }>
+                            点击体验项目
+                    </a>
 					</div>
+                    
 				</div>
     )
 }

@@ -27,9 +27,9 @@ const Home = () => {
 					</div>
 				</div>
                 <div class="pt-6 flex flex-col items-center justify-center space-y-4 font-bold ">
-                    <div className='text-4xl w-max rounded-lg mb-5  text-blue-500 duration-300 hover:text-red-500 hover:scale-105'>
-                        点此前往我的博客
-                    </div>
+                    <a href='/blog' className='bg-slate-200 text-4xl w-max rounded-lg mb-5  text-blue-500 duration-300 hover:text-red-500 hover:scale-105'>
+                        点击前往我的博客
+                    </a>
                     <div className='text-4xl  text-red-500'>
                         向下继续浏览
                     </div>
