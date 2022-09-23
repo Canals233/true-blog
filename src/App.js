@@ -2,7 +2,7 @@ import "./App.css";
 
 import Header from "./modules/Header/Header";
 import Profile from "./modules/Profile.jsx";
-import Spinner from "./modules/spinner/spinner";
+
 import BlogHome from "./blogPage/blogHome/blogHome";
 
 import { Routes, Route } from "react-router-dom";
@@ -11,7 +11,7 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
 	return (
-		<div className="App">
+		<div className="App relative">
 			
 				<Routes>
 					<Route path="/" element={<Header />}>

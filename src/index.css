@@ -5,9 +5,14 @@
 body{
     margin: 0;
     padding: 0;
-   
+    font-family: 'Ma Shan Zheng', cursive !important;
 }
 html{
     scroll-behavior: smooth;
+    font-family: 'Ma Shan Zheng', cursive !important;
 }
 /* 在html上加才有用 */
+@font-face{
+    font-family: 'Ma Shan Zheng', cursive;
+    src: url('./assets/MaShanZheng-Regular.ttf');
+}

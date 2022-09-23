@@ -12,16 +12,20 @@ const FooterItem = ({ title, textList, hrefs, imgsrc }) => {
 			{textList.map((text, index) => {
 				return (
 					<p className="mt-1 text-xl font-bold" key={index}>
-						<a
-							className={
-								herflen
-									? "text-blue-500 hover:text-red-500"
-									: ""
-							}
-							href={herflen ? hrefs[index] : "javascript:;"}
-						>
-							{text}
-						</a>
+						{herflen ? (
+							<a
+								className={
+									herflen
+										? "text-blue-500 hover:text-red-500"
+										: ""
+								}
+								href={hrefs[index]}
+							>
+								{text}
+							</a>
+						) : (
+							<p>{text}</p>
+						)}
 					</p>
 				);
 			})}

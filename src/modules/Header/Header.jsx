@@ -39,19 +39,20 @@ const Header = () => {
 	const [showheader, setShowHeader] = useState(true);
 	const [inHome, setInHome] = useState(true);
 	const triggerHander = () => setShowHeader(!showheader);
-
+	const [inDetail, setInDetail] = useState(false);
 	let { pathname } = useLocation();
-   
-	useEffect(() => setInHome(!pathname.includes("/blog")),[pathname]);
+
+	useEffect(() => setInHome(!pathname.includes("/blog")), [pathname]);
+	useEffect(() => setInDetail(!pathname.endsWith("blog")), [pathname]);
 
 	return (
-		<section id="header" className="z-10 ">
+		<section id="header" >
 			<div
 				className={`duration-500 w-full p-8 flex  justify-between border-b border-red-500 ${
-					showheader ? " " : "border-transparent"
-				}  flex-col md:flex-row  `}
+					showheader ? " " : "border-transparent bg-transparent"
+				}  flex-col md:flex-row sticky top-0 bg-white z-20`}
 			>
-				<div className="flex">
+				<div className={`flex`}>
 					<div className=" rounded-lg  h-20 ">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +60,7 @@ const Header = () => {
 							viewBox="0 0 24 24"
 							strokeWidth="1.5"
 							stroke="currentColor"
-							className="w-16 h-20 text-red-500"
+							className="w-16 h-20 text-black"
 							onMouseDown={triggerHander}
 						>
 							<path
@@ -70,20 +71,19 @@ const Header = () => {
 						</svg>
 					</div>
 					<a
-						
-						href={inHome ? "/blog" : "/"}
-						className="font-bold text-4xl align-middle pl-4 pt-5 tracking-wider whitespace-nowrap hover:text-red-500"
+						href={inHome || inDetail ? "/blog" : "/"}
+						className={`${showheader ? " " : " opacity-0 -translate-y-full "} duration-500 font-bold text-4xl align-middle pl-4 pt-5 tracking-wider whitespace-nowrap hover:text-red-500`}
 					>
-						{inHome ? "前往博客" : "前往主页"}
+						{inHome ? "前往博客" : (inDetail?'返回列表':'前往主页')}
 					</a>
 				</div>
 
-				{
+				{inHome && (
 					<div
 						className={`${
 							showheader
 								? ""
-								: "hidden opacity-0 translate-x-full"
+								: "hidden opacity-0 -translate-y-full"
 						} md:flex duration-500`}
 					>
 						{headItems.map((item, index) => {
@@ -99,7 +99,7 @@ const Header = () => {
 							);
 						})}
 					</div>
-				}
+				)}
 			</div>
 			<Outlet />
 		</section>
