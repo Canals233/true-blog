@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# 开始使用
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- 本网站使用create react app初始化
 
-## Available Scripts
+- 使用github进行代码托管
 
-In the project directory, you can run:
+- 使用netlify进行网页托管
 
-### `npm start`
+**您可访问https://canals-self-and-blog.netlify.app/进行查看**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 构建项目
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 您可以直接clone https://github.com/Canals233/true-blog也可以下载并解压压缩包
+- 在根目录中 `npm install`安装依赖
+- `npm start`即可在您的机器上上的浏览器看到网页
 
-### `npm test`
+## 依赖说明
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+本项目基本都使用`tailWindCSS`进行样式编写，且没有按照官网的安装步骤，使用`postcss`的最新版和`tailwind`的最新版，并将`craco.config`的`postcss`改为`postcssOptions`
 
-### `npm run build`
+字体使用谷歌字体的`MaShanZheng-Regular`，如您需要替换字体，请变更`src\index.css`中的`font-family`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+使用`craco`修改CRA的部分设置
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+本项目react和react-router-dom都是较新的版本（18.2.0/6.4.1），与旧版有较多的不同方法
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+markdown使用`"react-markdown": "^8.0.3"`解析文件`"remark-gfm": "^3.0.1"`解析更多md语法
 
-### `npm run eject`
+`"markdown-navbar": "^1.4.3"`得到md目录
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`"@tailwindcss/typography"`稳定md样式
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 数据源
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+由于开发时间有限，且本项目主要采用数组map方法渲染重复的组件，因此选择了重复组件所在的数组嵌入父组件中的形式
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+如header组件中嵌入了headerItem有关的信息
 
-## Learn More
+您通常可以在组件函数的头部直接看见这些数组
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+图标和图片在`src\assets\`下
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+博客源markdown文件`public\static`文件夹中
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+博客渲染数据`src\assets\bloglist.jsx`
 
-### Analyzing the Bundle Size
+# 个人主页介绍
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+本人设计水平较有限，且项目工期较短，主要是结构部分的展示
 
-### Making a Progressive Web App
+主要分为五个部分
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- header导航栏
+  - 点击左上角图标可以收起Header，Header右侧的内容是HeaderItem列表渲染而来，可以点击跳转到博客或者主页内的各部分
 
-### Advanced Configuration
+- 个人信息和简介
+- 技术能力
+- 项目展示
+- footer 联系部分
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# 博客页面
 
-### Deployment
+主要使用了react-markdown解析器
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+header通过react-router-dom共享
 
-### `npm run build` fails to minify
+博客列表可以看到所有博客
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+点击即可通过动态路由，请您注意的是，作者为便于路径解析在`blogDetail`中将`useParams()`得到的参数的第一个'-'修改为了'/'
+
